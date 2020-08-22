@@ -31,22 +31,22 @@ const mail = {
 }
 
 app.get('/sendMail', (req, res) => {
-    Transport.sendMail(mail, (error, info) => {
-        if (error) {
-            console.log(error)
-            res.json(error)
+    // Transport.sendMail(mail, (error, info) => {
+    //     if (error) {
+    //         console.log(error)
+    //         res.json(error)
 
-        }
+    //     }
 
-        else {
-            console.log('Mail Enviado')
-            console.log(info)
+    //     else {
+    //         console.log('Mail Enviado')
+    //         console.log(info)
 
 
-            res.json(info)
-        }
-    })
-
+    //         res.json(info)
+    //     }
+    // })
+res.send('Works!')
 })
 
 const server = http.createServer(app)
